@@ -1,10 +1,14 @@
-
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import PeriodicTable from "./components/PeriodicTable";
 
 
 function App() {
   return (
     <div>
-      Hello World!
+      <Nav />
+      <PeriodicTable />
+      < Footer />
     </div>
   );
 }
