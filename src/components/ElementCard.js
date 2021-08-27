@@ -4,7 +4,7 @@ import { Card, Icon, Segment } from 'semantic-ui-react'
 import '../app.css'
 
 function ElementCard({ props }) {
-  console.log(props);
+  //console.log(props);
 
 
   return (

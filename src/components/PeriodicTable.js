@@ -20,7 +20,7 @@ function PeriodicTable() {
   // to display a card when a button is clicked
 
   const showCard = (atomicNumber) => {
-    //console.log("Hi i m clicked")
+    // console.log(atomicNumber)
     setCardDeatils(true)
 
   }
@@ -51,18 +51,19 @@ function PeriodicTable() {
   }, [])
 
   const mapTable = table.map((elements) => {
+    const { atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered } = elements;
     return (
       <div >
         <Grid celled columns='equal'  >
           <Grid.Row columns='equal'>
             <Grid.Column>
               <p>
-                <span>Name: {elements.name}</span>
-                <span> ({elements.groupBlock})</span>
-                <span> Atomic Number:{elements.atomicNumber}</span>
-                <span>Symbol: {elements.symbol}</span>
+                <span>Name: {name}</span>
+                <span> ({groupBlock})</span>
+                <span> Atomic Number:{atomicNumber}</span>
+                <span>Symbol: {symbol}</span>
                 <div >
-                  <Button fluid compact onClick={showCard}>More</Button>
+                  <Button fluid compact onClick={() => showCard()}>More</Button>
                 </div>
               </p>
             </Grid.Column>
