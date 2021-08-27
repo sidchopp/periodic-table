@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image, Segment, Table } from 'semantic-ui-react'
 
+import '../app.css'
 
 // components
 import Loading from './Loading';
@@ -40,12 +41,32 @@ function PeriodicTable() {
 
   const mapTable = table.map((elements) => {
     return (
-      <div>
-        <h1>
-          {elements.name}
-        </h1>
-      </div>
+      <div style={{ padding: '2rem' }}>
+        {/* <Grid>
+          <Grid.Row columns={15}>
+            <Grid.Column>
+              <Segment> {elements.name}</Segment>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid> */}
 
+        {/* <Table celled fixed >
+          <Table.Header>
+            <Table.Body>
+              {elements.name}
+            </Table.Body>
+          </Table.Header>
+        </Table> */}
+        <Grid columns='equal' >
+          <Grid.Row columns='equal'>
+            <Grid.Column>
+              <p>
+                <span> {elements.name}</span>
+              </p>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
     )
   })
   return (

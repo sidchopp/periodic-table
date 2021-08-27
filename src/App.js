@@ -4,12 +4,13 @@ import PeriodicTable from "./components/PeriodicTable";
 
 
 
+
 function App() {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <PeriodicTable />
-      < Footer />
+      {/* < Footer /> */}
     </div>
   );
 }
