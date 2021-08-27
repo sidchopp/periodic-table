@@ -4,7 +4,7 @@ import { Card, Icon, Segment } from 'semantic-ui-react'
 import '../app.css'
 
 function ElementCard({ props }) {
-  //console.log(props);
+
 
 
   return (
@@ -12,7 +12,7 @@ function ElementCard({ props }) {
       <Segment placeholder>
         <Card>
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>{props.Name}</Card.Header>
             <Card.Meta>
               <span className='date'>Joined in 2015</span>
             </Card.Meta>
@@ -24,6 +24,7 @@ function ElementCard({ props }) {
             <a onClick={() => props}>
               <Icon name='angle double left' />
               Go Back
+
             </a>
           </Card.Content>
         </Card>
