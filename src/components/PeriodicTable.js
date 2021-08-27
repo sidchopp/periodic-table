@@ -15,12 +15,14 @@ function PeriodicTable() {
 
   const [loading, setLoading] = useState(true);
   const [table, setTable] = useState([]);
+  const [cardDetails, setCardDeatils] = useState(false)
 
   // to display a card when a button is clicked
 
   const showCard = () => {
     console.log("Hi i m clicked")
-    return <ElementCard />
+    setCardDeatils(true)
+
   }
 
   const fetchTable = async () => {
@@ -58,7 +60,7 @@ function PeriodicTable() {
                 <span> Atomic Number:{elements.atomicNumber}</span>
                 <span>Symbol: {elements.symbol}</span>
                 <div >
-                  <Button fluid compact onClick={() => { showCard() }}>More</Button>
+                  <Button fluid compact onClick={showCard}>More</Button>
                 </div>
               </p>
             </Grid.Column>
@@ -71,6 +73,11 @@ function PeriodicTable() {
   if (loading) {
     return (
       <Loading />
+    )
+  }
+  if (cardDetails) {
+    return (
+      <ElementCard />
     )
   }
   return (
