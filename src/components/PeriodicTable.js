@@ -42,26 +42,14 @@ function PeriodicTable() {
   const mapTable = table.map((elements) => {
     return (
       <div style={{ padding: '2rem' }}>
-        {/* <Grid>
-          <Grid.Row columns={15}>
-            <Grid.Column>
-              <Segment> {elements.name}</Segment>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid> */}
-
-        {/* <Table celled fixed >
-          <Table.Header>
-            <Table.Body>
-              {elements.name}
-            </Table.Body>
-          </Table.Header>
-        </Table> */}
-        <Grid columns='equal' >
+        <Grid celled columns='equal' >
           <Grid.Row columns='equal'>
             <Grid.Column>
               <p>
-                <span> {elements.name}</span>
+                <span>Name: {elements.name}</span>
+                <span> ({elements.groupBlock})</span>
+                <span> Atomic Number:{elements.atomicNumber}</span>
+                <span>Symbol: {elements.symbol}</span>
               </p>
             </Grid.Column>
           </Grid.Row>
@@ -71,22 +59,9 @@ function PeriodicTable() {
   })
   return (
     <div>
-
       <Grid>
         {mapTable}
       </Grid>
-      {/* {table.map((elements) => {
-        return (
-          <Grid key={elements.atomicNumber}>
-            <Grid.Row columns={10}>
-              <Grid.Column>
-                <Image src='/images/wireframe/image.png' />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        )
-      })} */}
-      {/* <ElementCard /> */}
     </div>
   )
 }
