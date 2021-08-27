@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { Grid, Image, Segment, Table, Button, Icon } from 'semantic-ui-react'
+import { Grid, Button, } from 'semantic-ui-react'
 
 import '../app.css'
 
@@ -19,8 +19,8 @@ function PeriodicTable() {
 
   // to display a card when a button is clicked
 
-  const showCard = () => {
-    console.log("Hi i m clicked")
+  const showCard = (atomicNumber) => {
+    //console.log("Hi i m clicked")
     setCardDeatils(true)
 
   }
@@ -33,11 +33,13 @@ function PeriodicTable() {
       const response = await fetch(url);
       //console.log(response);
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       // after getting our data, we want loading to stop
       setLoading(false)
       // to show the data of tours
       setTable(data)
+      // console.log(data.length);
+      // console.log(table.length);
     } catch (err) {
       // if there is error we want to stop loading
       setLoading(false)
@@ -70,6 +72,7 @@ function PeriodicTable() {
     )
   })
 
+
   if (loading) {
     return (
       <Loading />
@@ -77,7 +80,7 @@ function PeriodicTable() {
   }
   if (cardDetails) {
     return (
-      <ElementCard />
+      <ElementCard props={fetchTable} />
     )
   }
   return (

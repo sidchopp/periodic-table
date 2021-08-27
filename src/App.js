@@ -1,6 +1,6 @@
 
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
+//import Footer from "./components/Footer";
+//import Nav from "./components/Nav";
 import PeriodicTable from "./components/PeriodicTable";
 
 
