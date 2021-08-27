@@ -6,7 +6,7 @@ import '../app.css'
 
 // components
 import Loading from './Loading';
-//import ElementCard from './ElementCard';
+import ElementCard from './ElementCard';
 
 
 const url = 'https://neelpatel05.pythonanywhere.com/'
@@ -15,6 +15,13 @@ function PeriodicTable() {
 
   const [loading, setLoading] = useState(true);
   const [table, setTable] = useState([]);
+
+  // to display a card when a button is clicked
+
+  const showCard = () => {
+    console.log("Hi i m clicked")
+    return <ElementCard />
+  }
 
   const fetchTable = async () => {
     // to make sure loading is true when we are fetching data
@@ -51,10 +58,8 @@ function PeriodicTable() {
                 <span> Atomic Number:{elements.atomicNumber}</span>
                 <span>Symbol: {elements.symbol}</span>
                 <div >
-                  <Button fluid compact>More</Button>
+                  <Button fluid compact onClick={() => { showCard() }}>More</Button>
                 </div>
-
-
               </p>
             </Grid.Column>
           </Grid.Row>
@@ -62,6 +67,12 @@ function PeriodicTable() {
       </div>
     )
   })
+
+  if (loading) {
+    return (
+      <Loading />
+    )
+  }
   return (
     <div style={{ padding: '0.5rem' }}>
       <Grid celled >
