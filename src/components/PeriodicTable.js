@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { Grid, Image, Segment, Table } from 'semantic-ui-react'
+import { Grid, Image, Segment, Table, Button, Icon } from 'semantic-ui-react'
 
 import '../app.css'
 
@@ -41,8 +41,8 @@ function PeriodicTable() {
 
   const mapTable = table.map((elements) => {
     return (
-      <div style={{ padding: '2rem' }}>
-        <Grid celled columns='equal' >
+      <div >
+        <Grid celled columns='equal'  >
           <Grid.Row columns='equal'>
             <Grid.Column>
               <p>
@@ -50,6 +50,11 @@ function PeriodicTable() {
                 <span> ({elements.groupBlock})</span>
                 <span> Atomic Number:{elements.atomicNumber}</span>
                 <span>Symbol: {elements.symbol}</span>
+                <div >
+                  <Button fluid compact>More</Button>
+                </div>
+
+
               </p>
             </Grid.Column>
           </Grid.Row>
@@ -58,8 +63,8 @@ function PeriodicTable() {
     )
   })
   return (
-    <div>
-      <Grid>
+    <div style={{ padding: '0.5rem' }}>
+      <Grid celled >
         {mapTable}
       </Grid>
     </div>
