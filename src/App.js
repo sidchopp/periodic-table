@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import PeriodicTable from "./components/PeriodicTable";
 
 
+
 function App() {
   return (
     <div>
