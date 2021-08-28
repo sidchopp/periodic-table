@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Icon, Segment } from 'semantic-ui-react'
+import { Card, Icon, Segment, Button } from 'semantic-ui-react'
 
 import '../app.css'
 
@@ -21,11 +21,11 @@ function ElementCard({ props }) {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a onClick={() => props}>
+            <Button onClick={() => props}>
               <Icon name='angle double left' />
               Go Back
 
-            </a>
+            </Button>
           </Card.Content>
         </Card>
       </Segment>
