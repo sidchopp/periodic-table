@@ -81,7 +81,7 @@ function PeriodicTable() {
   }
   if (cardDetails) {
     return (
-      <ElementCard props={fetchTable} />
+      <ElementCard props={table} />
     )
   }
   return (
