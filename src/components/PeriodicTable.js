@@ -51,19 +51,19 @@ function PeriodicTable() {
   }, [])
 
   const mapTable = table.map((elements) => {
-    const { atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered } = elements;
+    // const { atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered } = elements;
     return (
-      <div key={atomicNumber} >
+      <div key={elements.atomicNumber} >
         <Grid celled columns='equal'  >
           <Grid.Row columns='equal'>
             <Grid.Column>
               <p>
-                <span>Name: {Name}</span>
-                <span> ({groupBlock})</span>
-                <span> Atomic Number:{atomicNumber}</span>
-                <span>Symbol: {symbol}</span>
+                <span>Name: {elements.Name}</span>
+                <span> ({elements.groupBlock})</span>
+                <span> Atomic Number:{elements.atomicNumber}</span>
+                <span>Symbol: {elements.symbol}</span>
                 <div >
-                  <Button key={atomicNumber} fluid compact onClick={() => showCard()}>More</Button>
+                  <Button key={elements.atomicNumber} fluid compact onClick={() => showCard()}>More</Button>
                 </div>
               </p>
             </Grid.Column>
