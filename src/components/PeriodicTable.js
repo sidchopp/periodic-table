@@ -7,6 +7,7 @@ import '../app.css'
 // components
 import Loading from './Loading';
 import ElementCard from './ElementCard';
+import TableList from './TableList';
 
 
 const url = 'https://neelpatel05.pythonanywhere.com/'
@@ -15,13 +16,14 @@ function PeriodicTable() {
 
   const [loading, setLoading] = useState(true);
   const [table, setTable] = useState([]);
-  const [cardDetails, setCardDeatils] = useState(false)
+  const [cardDetails, setCardDeatils] = useState([])
 
   // to display a card when a button is clicked
 
   const showCard = (atomicNumber) => {
+    const cardDetails = table.filter((elementSelect) => elementSelect.atomicNumber === atomicNumber)
     // console.log(atomicNumber)
-    setCardDeatils(true)
+    setCardDeatils(cardDetails)
 
   }
 
@@ -50,47 +52,13 @@ function PeriodicTable() {
     fetchTable();
   }, [])
 
-  const mapTable = table.map((elements) => {
-    // const { atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered } = elements;
-    return (
-      <div key={elements.atomicNumber} >
-        <Grid celled columns='equal'  >
-          <Grid.Row columns='equal'>
-            <Grid.Column>
-              <p>
-                <span>Name: {elements.Name}</span>
-                <span> ({elements.groupBlock})</span>
-                <span> Atomic Number:{elements.atomicNumber}</span>
-                <span>Symbol: {elements.symbol}</span>
-                <div >
-                  <Button key={elements.atomicNumber} fluid compact onClick={() => showCard()}>More</Button>
-                </div>
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </div>
-    )
-  })
-
-
   if (loading) {
     return (
       <Loading />
     )
   }
-  if (cardDetails) {
-    return (
-      <ElementCard props={table} />
-    )
-  }
-  return (
-    <div style={{ padding: '0.5rem' }}>
-      <Grid celled >
-        {mapTable}
-      </Grid>
-    </div>
-  )
+
+  return <TableList elementsProps={table} showElement={showCard} />
 }
 
-export default PeriodicTable
+export default PeriodicTable;
