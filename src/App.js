@@ -9,6 +9,7 @@ import PeriodicTable from "./components/PeriodicTable";
 function App() {
   return (
     <div>
+
       {/* <Nav /> */}
       <PeriodicTable />
       {/* < Footer /> */}

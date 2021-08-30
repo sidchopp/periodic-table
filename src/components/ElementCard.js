@@ -2,18 +2,22 @@ import React, { useState } from 'react'
 import { Card, Icon, Segment, Button, Grid, Header } from 'semantic-ui-react'
 
 // CSS
-import '../app.css'
+//import '../app.css'
 
-function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered }) {
+// function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered }) {
+
+function ElementCard({ name, appearance, atomic_mass, boil, category, density, color, discovered_by, melt, molar_heat, named_by, number, period, phase, source, spectral_img, summary, symbol, xpos, ypos, shells, electron_configuration, electron_configuration_semantic, electron_affinity, electronegativity_pauling, ionization_energies, hex }) {
+
+
 
   // state
   const [showInfo, setShowInfo] = useState(false);
 
   return (
     < >
-
-      <Grid celled  >
-        <Grid.Row columns>
+      {symbol}
+      {/* <Grid celled columns={18}  >
+        <Grid.Row rows={7}>
           <Grid.Column>
             <p>
               <span>Name: {Name}</span>
@@ -50,7 +54,7 @@ function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkH
             </p>
           </Grid.Column>
         </Grid.Row>
-      </Grid>
+      </Grid> */}
     </>
   )
 }
