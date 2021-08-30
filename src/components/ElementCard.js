@@ -1,35 +1,63 @@
-import React from 'react'
-import { Card, Icon, Segment, Button } from 'semantic-ui-react'
+import React, { useState } from 'react'
+import { Card, Icon, Segment, Button, Grid, Header } from 'semantic-ui-react'
 
 import '../app.css'
 
-function ElementCard({ props }) {
-  console.log(props);
+function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered }) {
 
-
+  const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <div className='center'>
-      <Segment placeholder>
-        <Card>
-          <Card.Content>
-            <Card.Header>{props.Name}</Card.Header>
-            <Card.Meta>
-              <span className='date'>Joined in 2015</span>
-            </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <Button onClick={() => props}>
-              <Icon name='angle double left' />
-              Go Back
+    <div >
 
-            </Button>
-          </Card.Content>
-        </Card>
-      </Segment>
+      <Grid celled='internally' columns={18} >
+        <Grid.Row >
+          <Grid.Column>
+            <p>
+              <span>Name: {Name}</span>
+              <span> {groupBlock}</span>
+              <span> Atomic Number:{atomicNumber}</span>
+              <span>Symbol: {symbol}</span>
+              <span>
+                <Button onClick={() => setShowInfo(!showInfo)}>
+                  {showInfo ? <Icon name='minus' /> : <Icon name='plus' />}
+
+
+
+                </Button>
+                <span>
+                  {showInfo && <Segment placeholder>
+                    <Card>
+                      <Card.Content>
+                        <Card.Header>{Name}</Card.Header>
+                        <Card.Meta>
+                          <span className='date'>{boilingPoint}</span>
+                          <span className='date'>{electronAffinity}</span>
+                          <span className='date'>{electronegativity}</span>
+                          <span className='date'>{meltingPoint}</span>
+                          <span className='date'>{yearDiscovered}</span>
+
+                        </Card.Meta>
+                        <Card.Description>
+                          {standardState}
+                        </Card.Description>
+                      </Card.Content>
+                      <Card.Content extra>
+
+
+                      </Card.Content>
+                    </Card>
+                  </Segment>
+                  }
+                </span>
+              </span>
+            </p>
+
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+
+
     </div>
   )
 }

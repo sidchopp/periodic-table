@@ -17,13 +17,13 @@ function PeriodicTable() {
   const [table, setTable] = useState([]);
   const [cardDetails, setCardDeatils] = useState(false)
 
-  // to display a card when a button is clicked
+  // // to display a card when a button is clicked
 
-  const showCard = (atomicNumber) => {
-    // console.log(atomicNumber)
-    setCardDeatils(true)
+  // const showCard = (atomicNumber) => {
+  //   // console.log(atomicNumber)
+  //   setCardDeatils(true)
 
-  }
+  // }
 
   const fetchTable = async () => {
     // to make sure loading is true when we are fetching data
@@ -51,44 +51,27 @@ function PeriodicTable() {
   }, [])
 
   const mapTable = table.map((elements) => {
-    // const { atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered } = elements;
     return (
-      <div key={elements.atomicNumber} >
-        <Grid celled columns='equal'  >
-          <Grid.Row columns='equal'>
-            <Grid.Column>
-              <p>
-                <span>Name: {elements.Name}</span>
-                <span> ({elements.groupBlock})</span>
-                <span> Atomic Number:{elements.atomicNumber}</span>
-                <span>Symbol: {elements.symbol}</span>
-                <div >
-                  <Button key={elements.atomicNumber} fluid compact onClick={() => showCard()}>More</Button>
-                </div>
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </div>
+      <ElementCard key={elements.atomicNumber} {...elements} />
     )
   })
-
 
   if (loading) {
     return (
       <Loading />
     )
   }
-  if (cardDetails) {
-    return (
-      <ElementCard props={table} />
-    )
-  }
+  // if (cardDetails) {
+  //   return (
+  //     <ElementCard props={table} />
+  //   )
+  // }
   return (
-    <div style={{ padding: '0.5rem' }}>
-      <Grid celled >
-        {mapTable}
-      </Grid>
+    <div >
+      <h1>Hi</h1>
+
+      {mapTable}
+
     </div>
   )
 }
