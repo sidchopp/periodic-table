@@ -38,8 +38,8 @@ p > span {
 .periodic-table {
   display: grid;
   /* flex-wrap: wrap; */
-  grid-template-columns: repeat(18, 64px);
-  grid-template-rows: repeat(10, 64px);
+  grid-template-columns: repeat(18, 69px);
+  grid-template-rows: repeat(10, 69px);
   position: absolute;
   grid-column-gap: 5px;
   grid-row-gap: 5px;

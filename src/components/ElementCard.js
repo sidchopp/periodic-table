@@ -49,7 +49,7 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
         <Modal
           closeIcon
           open={open}
-          trigger={<Button icon ><Icon name='angle right' /></Button>}
+          trigger={<Button size='mini' basic compact icon ><Icon name='angle right' /></Button>}
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
         >
