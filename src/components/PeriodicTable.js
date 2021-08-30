@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Grid } from 'semantic-ui-react';
 
 // CSS
 import '../app.css'
@@ -38,7 +39,7 @@ function PeriodicTable() {
 
   const mapTable = table.map((elements) => {
     return (
-      <ElementCard key={elements.atomicNumber} {...elements} />
+      <div><ElementCard key={elements.atomicNumber} {...elements} /></div>
     )
   })
   if (loading) {
@@ -49,7 +50,10 @@ function PeriodicTable() {
   return (
     <div >
       <h1>The Periodic Table</h1>
-      {mapTable}
+      <Grid columns={3} divided>
+        <Grid.Column></Grid.Column>
+        {mapTable}
+      </Grid>
     </div>
   )
 }

@@ -10,9 +10,10 @@ function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkH
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <div >
-      <Grid celled='internally' columns={18} >
-        <Grid.Row >
+    < >
+
+      <Grid celled  >
+        <Grid.Row columns>
           <Grid.Column>
             <p>
               <span>Name: {Name}</span>
@@ -50,7 +51,7 @@ function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkH
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </div>
+    </>
   )
 }
 
