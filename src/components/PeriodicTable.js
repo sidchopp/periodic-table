@@ -59,10 +59,10 @@ function PeriodicTable() {
 
   // data from local PeriodicTable JSON file
 
-  const mapTable = data.elements.map((elements) => {
+  const mapTable = data.elements.map((element) => {
     return (
 
-      <div><ElementCard key={elements.name} {...elements} /></div>
+      <ElementCard key={element.name} {...element} />
 
     )
   })

@@ -15,7 +15,8 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
 
   return (
     < >
-      {symbol}
+      <div style={{ gridColumn: xpos, gridRow: ypos }}>{symbol}</div>
+
       {/* <Grid celled columns={18}  >
         <Grid.Row rows={7}>
           <Grid.Column>
