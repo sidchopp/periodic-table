@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import { Card, Icon, Segment, Button, Grid, Header } from 'semantic-ui-react'
 
+// CSS
 import '../app.css'
 
 function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered }) {
 
+  // state
   const [showInfo, setShowInfo] = useState(false);
 
   return (
     <div >
-
       <Grid celled='internally' columns={18} >
         <Grid.Row >
           <Grid.Column>
@@ -21,9 +22,6 @@ function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkH
               <span>
                 <Button onClick={() => setShowInfo(!showInfo)}>
                   {showInfo ? <Icon name='minus' /> : <Icon name='plus' />}
-
-
-
                 </Button>
                 <span>
                   {showInfo && <Segment placeholder>
@@ -36,15 +34,12 @@ function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkH
                           <span className='date'>{electronegativity}</span>
                           <span className='date'>{meltingPoint}</span>
                           <span className='date'>{yearDiscovered}</span>
-
                         </Card.Meta>
                         <Card.Description>
                           {standardState}
                         </Card.Description>
                       </Card.Content>
                       <Card.Content extra>
-
-
                       </Card.Content>
                     </Card>
                   </Segment>
@@ -52,14 +47,11 @@ function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkH
                 </span>
               </span>
             </p>
-
           </Grid.Column>
         </Grid.Row>
       </Grid>
-
-
     </div>
   )
 }
 
-export default ElementCard
+export default ElementCard;
