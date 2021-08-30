@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Icon, Segment, Button, Grid, Header } from 'semantic-ui-react'
+import { Card, Icon, Segment, Button, Grid, Header, Modal, Image } from 'semantic-ui-react'
 
 // CSS
 //import '../app.css'
@@ -23,6 +23,8 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
 
   // state
   const [showInfo, setShowInfo] = useState(false);
+  const [open, setOpen] = useState(false)
+
 
   return (
     < >
@@ -34,8 +36,34 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
         }}>
 
         <div className="number">{number}</div>
+        {/* <div><Button onClick={() => setShowInfo(!showInfo)}>
+          {showInfo ? <Icon name='minus' /> : <Icon name='plus' />}
+        </Button></div> */}
         <div className='symbol'>{symbol}</div>
-        <div className='name'>{name}</div>
+        {/* <div className='name'>{name}</div> */}
+
+        {/* <Icon onClick={() => setShowInfo(!showInfo)} link  > {showInfo ? <Icon name='minus' /> : <Icon name='plus' />}</Icon>
+        {showInfo && <span>{name}</span>} */}
+
+
+        <Modal
+          closeIcon
+          open={open}
+          trigger={<Button icon ><Icon name='angle right' /></Button>}
+          onClose={() => setOpen(false)}
+          onOpen={() => setOpen(true)}
+        >
+          <Header size='huge' > {name} || {symbol} </Header>
+          <Header>Discovered by:<i> {discovered_by}</i></Header>
+          <Modal.Content>
+            <Modal.Description>
+              <p>{summary} </p>
+              <p>Atomic Number: {number}</p>
+              <p>Boiling point: {boil} and Melting Point: {melt}</p>
+            </Modal.Description>
+          </Modal.Content>
+
+        </Modal>
         {/* <Button onClick={() => setShowInfo(!showInfo)}>
           {showInfo ? <Icon name='minus' /> : <Icon name='plus' />}
         </Button> */}
