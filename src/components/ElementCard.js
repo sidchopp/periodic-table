@@ -6,6 +6,17 @@ import { Card, Icon, Segment, Button, Grid, Header } from 'semantic-ui-react'
 
 // function ElementCard({ atomicMass, atomicNumber, boilingPoint, bondingType, cpkHexColor, density, electronAffinity, electronegativity, electronicConfiguration, groupBlock, ionRadius, ionizationEnergy, meltingPoint, name: Name, oxidationStates, standardState, symbol, vanDelWaalsRadius, yearDiscovered }) {
 
+const colorMap = {
+  "noble gas": "#FFBC42",
+  "alkaline earth metal": "#EC674E",
+  "diatomic nonmetal": "#D81159",
+  "alkali metal": "#8F2D56",
+  "transition metal": "#58586B",
+  "post-transition metal": "#218380",
+  lanthanide: "#4AABAF",
+  metalloid: "73D2DE"
+};
+
 function ElementCard({ name, appearance, atomic_mass, boil, category, density, color, discovered_by, melt, molar_heat, named_by, number, period, phase, source, spectral_img, summary, symbol, xpos, ypos, shells, electron_configuration, electron_configuration_semantic, electron_affinity, electronegativity_pauling, ionization_energies, hex }) {
 
 
@@ -15,7 +26,40 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
 
   return (
     < >
-      <div style={{ gridColumn: xpos, gridRow: ypos }}>{symbol}</div>
+      <div className='element'
+        style={{
+          gridColumn: xpos,
+          gridRow: ypos,
+          borderColor: colorMap[category]
+        }}>
+
+        <div className="number">{number}</div>
+        <div className='symbol'>{symbol}</div>
+        <div className='name'>{name}</div>
+        {/* <Button onClick={() => setShowInfo(!showInfo)}>
+          {showInfo ? <Icon name='minus' /> : <Icon name='plus' />}
+        </Button> */}
+        {/* {showInfo && <Segment placeholder>
+          <Card>
+            <Card.Content>
+              <Card.Header>{boil}</Card.Header>
+              <Card.Meta>
+                <span className='date'>{period}</span>
+                <span className='date'>{phase}</span>
+                <span className='date'>{source}</span>
+
+              </Card.Meta>
+              <Card.Description>
+
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+            </Card.Content>
+          </Card>
+        </Segment>
+        } */}
+
+      </div>
 
       {/* <Grid celled columns={18}  >
         <Grid.Row rows={7}>

@@ -25,12 +25,34 @@ p > span {
   transform: translate(-50%, -50%);
 } */
 
+.symbol {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
 .periodic-table {
   display: grid;
+  flex-wrap: wrap;
   grid-template-columns: repeat(18, 64px);
   grid-template-rows: repeat(10, 64px);
   position: absolute;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.element {
+  border-style: ridge;
+  padding: 5px;
+
+  overflow: none;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.name {
+  text-align: center;
 }
