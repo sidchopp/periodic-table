@@ -68,8 +68,10 @@ function PeriodicTable() {
   })
 
   return (
-    <><h1>The Periodic Table</h1>
-      <div className='periodic-table'>{mapTable}</div></>
+    <>
+      <h1 className='heading'>The Periodic Table</h1>
+      <div className='periodic-table'>{mapTable}</div>
+    </>
 
   )
 }

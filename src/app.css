@@ -25,6 +25,10 @@ p > span {
   transform: translate(-50%, -50%);
 } */
 
+.heading {
+  text-align: center;
+  padding: 2rem;
+}
 .symbol {
   text-align: center;
   font-weight: bold;
@@ -33,7 +37,7 @@ p > span {
 
 .periodic-table {
   display: grid;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   grid-template-columns: repeat(18, 64px);
   grid-template-rows: repeat(10, 64px);
   position: absolute;
@@ -42,6 +46,8 @@ p > span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: 5rem;
+  padding: 2rem;
 }
 
 .element {
@@ -55,4 +61,9 @@ p > span {
 
 .name {
   text-align: center;
+  font-size: 0.61rem;
+}
+.number {
+  text-align: left;
+  font-size: 1rem;
 }
