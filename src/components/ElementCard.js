@@ -32,7 +32,8 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
         style={{
           gridColumn: xpos,
           gridRow: ypos,
-          borderColor: colorMap[category]
+          borderColor: colorMap[category],
+          backgroundColor: colorMap[category]
         }}>
 
         <div className="number">{number}</div>
