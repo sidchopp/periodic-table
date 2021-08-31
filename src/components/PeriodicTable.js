@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Grid } from 'semantic-ui-react';
+import { Grid, Header, Icon, } from 'semantic-ui-react';
 
 // CSS
 import '../app.css'
@@ -69,7 +69,12 @@ function PeriodicTable() {
 
   return (
     <>
-      <h1 className='heading'>The Periodic Table</h1>
+      <div className='heading'>
+        <Header as='h2' icon textAlign='center'>
+          <a href="https://www.linkedin.com/in/sidchopp/" target="_blank"> <Icon name='table' circular /></a>
+          <Header.Content>The Periodic Table</Header.Content>
+        </Header>
+      </div>
       <div className='periodic-table'>{mapTable}</div>
     </>
 
