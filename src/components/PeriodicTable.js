@@ -61,24 +61,10 @@ function PeriodicTable() {
 
   const mapTable = data.elements.map((element) => {
     return (
-
       <ElementCard key={element.name} {...element} />
-
     )
   })
-
-  return (
-    <>
-      <div className='heading'>
-        <Header as='h2' icon textAlign='center'>
-          <a href="https://www.linkedin.com/in/sidchopp/" target="_blank"> <Icon name='table' circular /></a>
-          <Header.Content>The Periodic Table</Header.Content>
-        </Header>
-      </div>
-      <div className='periodic-table'>{mapTable}</div>
-    </>
-
-  )
+  return <div className='periodic-table'>{mapTable}</div>
 }
 
 export default PeriodicTable;

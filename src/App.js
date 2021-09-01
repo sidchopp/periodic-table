@@ -1,6 +1,6 @@
 
 //import Footer from "./components/Footer";
-//import Nav from "./components/Nav";
+import Nav from "./components/Nav";
 import PeriodicTable from "./components/PeriodicTable";
 
 
@@ -8,13 +8,10 @@ import PeriodicTable from "./components/PeriodicTable";
 
 function App() {
   return (
-    <div>
-
-      {/* <Nav /> */}
+    <>
+      < Nav />
       <PeriodicTable />
-      {/* < Footer /> */}
-
-    </div>
+    </>
   );
 }
 
