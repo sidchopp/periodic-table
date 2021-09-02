@@ -9,6 +9,7 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 1.8vw;
+  color: blue;
 }
 
 .periodic-table {
@@ -39,7 +40,8 @@ body {
 }
 .number {
   text-align: left;
-  font-size: 1vw;
+  font-size: 0.9vw;
+  font-weight: bold;
 }
 
 /* @media only screen and (max-width: 800px) {

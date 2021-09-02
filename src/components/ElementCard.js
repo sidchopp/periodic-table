@@ -35,8 +35,7 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
         <Modal
           closeIcon
           // open={open}
-          trigger={<a ><div className='symbol'>{symbol}</div></a>}
-          // {<Icon link rotated='clockwise' name='sort up' ></Icon>}
+          trigger={<div className='symbol'><Icon link name={symbol} >{symbol}</Icon></div>}
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
         >
