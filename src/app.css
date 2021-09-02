@@ -11,6 +11,9 @@ body {
   font-size: 1.8vw;
   color: blue;
 }
+.symbol :hover {
+  font-size: 2.2vw;
+}
 
 .periodic-table {
   display: grid;
@@ -38,6 +41,7 @@ body {
   text-align: center;
   font-size: 1vw;
 }
+
 .number {
   text-align: left;
   font-size: 0.9vw;

@@ -42,7 +42,7 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
           <Header size='huge' > {name} || {symbol} </Header>
           <Header>Discovered by:<i> {discovered_by}</i></Header>
           <Modal.Content image>
-            <Image size='medium' src={img} wrapped />
+            <Image size='large' src={img} wrapped />
             <Modal.Description>
               <p>{summary} </p>
               <p>Atomic Number: {number}</p>
