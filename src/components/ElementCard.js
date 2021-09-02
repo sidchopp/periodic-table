@@ -15,7 +15,7 @@ const colorMap = {
   metalloid: "73D2DE"
 };
 
-function ElementCard({ name, appearance, atomic_mass, boil, category, density, color, discovered_by, melt, molar_heat, named_by, number, period, phase, source, spectral_img, summary, symbol, xpos, ypos, shells, electron_configuration, electron_configuration_semantic, electron_affinity, electronegativity_pauling, ionization_energies, hex }) {
+function ElementCard({ name, appearance, atomic_mass, boil, category, density, color, discovered_by, melt, molar_heat, named_by, number, period, phase, source, spectral_img, img, summary, symbol, xpos, ypos, shells, electron_configuration, electron_configuration_semantic, electron_affinity, electronegativity_pauling, ionization_energies, hex }) {
 
   // state
   const [showInfo, setShowInfo] = useState(false);
@@ -31,22 +31,28 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
           backgroundColor: colorMap[category],
         }}>
         <div className="number">{number}</div>
-        <div className='symbol'>{symbol}</div>
+        {/* <div className='symbol'>{symbol}</div> */}
         <Modal
           closeIcon
-          open={open}
-          trigger={<Icon link rotated='clockwise' name='sort up' ></Icon>}
+          // open={open}
+          trigger={<a ><div className='symbol'>{symbol}</div></a>}
+          // {<Icon link rotated='clockwise' name='sort up' ></Icon>}
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
         >
           <Header size='huge' > {name} || {symbol} </Header>
           <Header>Discovered by:<i> {discovered_by}</i></Header>
-          <Modal.Content>
+          <Modal.Content image>
+            <Image size='medium' src={img} wrapped />
             <Modal.Description>
               <p>{summary} </p>
               <p>Atomic Number: {number}</p>
-              <p>Boiling point: {boil} and Melting Point: {melt}</p>
+              <p>Appearance: {appearance}</p>
+              <p>Phase: {phase}</p>
+
             </Modal.Description>
+
+
           </Modal.Content>
         </Modal>
       </div>
