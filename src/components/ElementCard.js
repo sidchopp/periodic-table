@@ -43,11 +43,13 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
           <Modal.Content image>
             <Image size='large' src={img} wrapped />
             <Modal.Description>
-              <p>Discovered by:<i> {discovered_by}</i></p>
-              <p>{summary} </p>
-              <p>Atomic Number: {number}</p>
-              <p>Appearance: {appearance}</p>
-              <p>Phase: {phase}</p>
+              <div> <Icon name='angle double right'></Icon>  Discovered by:<i> {discovered_by}</i></div>
+              <div> <Icon name='angle double right'></Icon>  About: {summary}</div>
+
+              <div> <Icon name='angle double right'></Icon>  Atomic Number: {number}</div>
+              <div> <Icon name='angle double right'></Icon>  Appearance: {appearance}</div>
+              <div> <Icon name='angle double right'></Icon>  Phase: {phase}</div>
+
 
             </Modal.Description>
 
