@@ -39,11 +39,11 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
         >
-          <Header size='huge' > {name} || {symbol} </Header>
-          <Header>Discovered by:<i> {discovered_by}</i></Header>
+          <Header size='huge' ><div style={{ color: 'blue', fontSize: '60px', margin: '5px' }}>{symbol}</div>  <div style={{ fontSize: '30px', margin: '7px' }}>{name}</div></Header>
           <Modal.Content image>
             <Image size='large' src={img} wrapped />
             <Modal.Description>
+              <p>Discovered by:<i> {discovered_by}</i></p>
               <p>{summary} </p>
               <p>Atomic Number: {number}</p>
               <p>Appearance: {appearance}</p>
