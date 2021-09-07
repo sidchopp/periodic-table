@@ -9,7 +9,7 @@ const Nav = () => (
       <Menu.Item>
         <Header as='h2'>
           <a href="https://github.com/sidchopp" target="_blank" > <Icon color='violet' link name='table' /></a>
-          <Header.Content >The Periodic Table</Header.Content>
+          <Header.Content style={{ fontSize: '1.8vw' }} >The Periodic Table</Header.Content>
         </Header>
       </Menu.Item>
     </Menu>
