@@ -49,6 +49,7 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
               <div> <Icon name='angle double right'></Icon>  Atomic Number: {number}</div>
               <div> <Icon name='angle double right'></Icon>  Appearance: {appearance}</div>
               <div> <Icon name='angle double right'></Icon>  Phase: {phase}</div>
+              <div> <Icon name='chevron circle right'></Icon>   <a href={source} target='_blank'  >More</a></div>
 
 
             </Modal.Description>
