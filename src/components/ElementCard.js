@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Icon, Segment, Button, Grid, Header, Modal, Image } from 'semantic-ui-react'
+import { Card, Icon, Segment, Button, Grid, Header, Modal, Image, Divider } from 'semantic-ui-react'
 
 // CSS
 import '../app.css'

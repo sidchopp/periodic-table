@@ -8,7 +8,7 @@ const Nav = () => (
     <Menu compact style={{ margin: '1vw' }} >
       <Menu.Item>
         <Header as='h2'>
-          <a href="https://github.com/sidchopp" target="_blank" > <Icon color='violet' link name='table' /></a>
+          <a href="https://sid-projects.netlify.app/" target="_blank" > <Icon color='black' link name='sidebar' /></a>
           <Header.Content style={{ fontSize: '1.8vw' }} >The Periodic Table</Header.Content>
         </Header>
       </Menu.Item>
