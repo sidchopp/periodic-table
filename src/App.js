@@ -1,10 +1,8 @@
 
-//import Footer from "./components/Footer";
+//Components
+
 import Nav from "./components/Nav";
 import PeriodicTable from "./components/PeriodicTable";
-
-
-
 
 function App() {
   return (

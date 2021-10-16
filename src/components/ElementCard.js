@@ -45,20 +45,14 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
             <Modal.Description>
               <div> <Icon name='angle double right'></Icon>  Discovered by:<i> {discovered_by}</i></div>
               <div> <Icon name='angle double right'></Icon>  About: {summary}</div>
-
               <div> <Icon name='angle double right'></Icon>  Atomic Number: {number}</div>
               <div> <Icon name='angle double right'></Icon>  Appearance: {appearance}</div>
               <div> <Icon name='angle double right'></Icon>  Phase: {phase}</div>
               <div> <Icon name='chevron circle right'></Icon>   <a href={source} target='_blank'  >More</a></div>
-
-
             </Modal.Description>
-
-
           </Modal.Content>
         </Modal>
       </div>
-
     </>
   )
 }

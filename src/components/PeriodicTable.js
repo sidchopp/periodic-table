@@ -5,7 +5,7 @@ import { Grid, Header, Icon, } from 'semantic-ui-react';
 import '../app.css'
 
 // components
-import Loading from './Loading';
+// import Loading from './Loading';
 import ElementCard from './ElementCard';
 import data from './PeriodicTableJSON.json';
 
