@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Grid, Header, Icon, } from 'semantic-ui-react';
+// import { useState, useEffect } from 'react'
+// import { Grid, Header, Icon, } from 'semantic-ui-react';
 
 // CSS
 import '../app.css'
@@ -10,11 +10,11 @@ import ElementCard from './ElementCard';
 import data from './PeriodicTableJSON.json';
 
 
-const url = 'https://neelpatel05.pythonanywhere.com/'
+// const url = 'https://neelpatel05.pythonanywhere.com/'
 function PeriodicTable() {
   // state
-  const [loading, setLoading] = useState(true);
-  const [table, setTable] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [table, setTable] = useState([]);
 
   // Data From API
   // const fetchTable = async () => {

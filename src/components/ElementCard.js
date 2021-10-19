@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Icon, Segment, Button, Grid, Header, Modal, Image, Divider } from 'semantic-ui-react'
+import { Icon, Header, Modal, Image, } from 'semantic-ui-react'
 
 // CSS
 import '../app.css'
@@ -18,7 +18,7 @@ const colorMap = {
 function ElementCard({ name, appearance, atomic_mass, boil, category, density, color, discovered_by, melt, molar_heat, named_by, number, period, phase, source, spectral_img, img, summary, symbol, xpos, ypos, shells, electron_configuration, electron_configuration_semantic, electron_affinity, electronegativity_pauling, ionization_energies, hex }) {
 
   // state
-  const [showInfo, setShowInfo] = useState(false);
+  // const [showInfo, setShowInfo] = useState(false);
   const [open, setOpen] = useState(false)
 
   return (
@@ -48,7 +48,7 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
               <div> <Icon name='angle double right'></Icon>  Atomic Number: {number}</div>
               <div> <Icon name='angle double right'></Icon>  Appearance: {appearance}</div>
               <div> <Icon name='angle double right'></Icon>  Phase: {phase}</div>
-              <div> <Icon name='chevron circle right'></Icon>   <a href={source} target='_blank'  >More</a></div>
+              <div> <Icon name='chevron circle right'></Icon>   <a href={source} target='_blank' rel="noreferrer" >More</a></div>
             </Modal.Description>
           </Modal.Content>
         </Modal>
