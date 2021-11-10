@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Icon, Header, Modal, Image, } from 'semantic-ui-react'
+import { Icon, Header, Modal, Image, Popup } from 'semantic-ui-react'
 
 // CSS
 import '../app.css'
@@ -23,36 +23,44 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
 
   return (
     < >
-      <div className='element'
-        style={{
-          gridColumn: xpos,
-          gridRow: ypos,
-          borderColor: colorMap[category],
-          backgroundColor: colorMap[category],
-        }}>
-        <div className="number">{number}</div>
-        {/* <div className='symbol'>{symbol}</div> */}
-        <Modal
-          closeIcon
-          // open={open}
-          trigger={<div className='symbol'><Icon link name={symbol} >{symbol}</Icon></div>}
-          onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-        >
-          <Header size='huge' ><div style={{ color: 'blue', fontSize: '60px', margin: '5px' }}>{symbol}</div>  <div style={{ fontSize: '30px', margin: '7px' }}>{name}</div></Header>
-          <Modal.Content image>
-            <Image size='large' src={img} wrapped />
-            <Modal.Description>
-              <div> <Icon name='angle double right'></Icon>  Discovered by:<i> {discovered_by}</i></div>
-              <div> <Icon name='angle double right'></Icon>  About: {summary}</div>
-              <div> <Icon name='angle double right'></Icon>  Atomic Number: {number}</div>
-              <div> <Icon name='angle double right'></Icon>  Appearance: {appearance}</div>
-              <div> <Icon name='angle double right'></Icon>  Phase: {phase}</div>
-              <div> <Icon name='chevron circle right'></Icon>   <a href={source} target='_blank' rel="noreferrer" >More</a></div>
-            </Modal.Description>
-          </Modal.Content>
-        </Modal>
-      </div>
+      <Popup
+        inverted
+        position='top center'
+        content={name}
+        trigger={
+          <div className='element'
+            style={{
+              gridColumn: xpos,
+              gridRow: ypos,
+              borderColor: colorMap[category],
+              backgroundColor: colorMap[category],
+            }}>
+            <div className="number">{number}</div>
+            {/* <div className='symbol'>{symbol}</div> */}
+            <Modal
+              closeIcon
+              // open={open}
+              trigger={<div className='symbol'><Icon link name={symbol} >{symbol}</Icon></div>}
+              onClose={() => setOpen(false)}
+              onOpen={() => setOpen(true)}
+            >
+              <Header size='huge' ><div style={{ color: 'blue', fontSize: '60px', margin: '5px' }}>{symbol}</div>  <div style={{ fontSize: '30px', margin: '7px' }}>{name}</div></Header>
+              <Modal.Content image>
+                <Image size='large' src={img} wrapped />
+                <Modal.Description>
+                  <div> <Icon name='angle double right'></Icon>  Discovered by:<i> {discovered_by}</i></div>
+                  <div> <Icon name='angle double right'></Icon>  About: {summary}</div>
+                  <div> <Icon name='angle double right'></Icon>  Atomic Number: {number}</div>
+                  <div> <Icon name='angle double right'></Icon>  Appearance: {appearance}</div>
+                  <div> <Icon name='angle double right'></Icon>  Phase: {phase}</div>
+                  <div> <Icon name='chevron circle right'></Icon>   <a href={source} target='_blank' rel="noreferrer" >More</a></div>
+                </Modal.Description>
+              </Modal.Content>
+            </Modal>
+          </div>
+        }
+      />
+
     </>
   )
 }
