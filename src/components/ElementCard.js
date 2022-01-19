@@ -17,8 +17,6 @@ const colorMap = {
 
 function ElementCard({ name, appearance, atomic_mass, boil, category, density, color, discovered_by, melt, molar_heat, named_by, number, period, phase, source, spectral_img, img, summary, symbol, xpos, ypos, shells, electron_configuration, electron_configuration_semantic, electron_affinity, electronegativity_pauling, ionization_energies, hex }) {
 
-  // state
-  // const [showInfo, setShowInfo] = useState(false);
   const [open, setOpen] = useState(false)
 
   return (
@@ -36,10 +34,9 @@ function ElementCard({ name, appearance, atomic_mass, boil, category, density, c
               backgroundColor: colorMap[category],
             }}>
             <div className="number">{number}</div>
-            {/* <div className='symbol'>{symbol}</div> */}
             <Modal
               closeIcon
-              // open={open}
+              open={open}
               trigger={<div className='symbol'><Icon link name={symbol} >{symbol}</Icon></div>}
               onClose={() => setOpen(false)}
               onOpen={() => setOpen(true)}
